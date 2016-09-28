@@ -19,9 +19,7 @@
 	    padding: 10px;
 	    cursor: pointer;
 	}
-    .bor{
-        border:10px solid red;
-    }
+    
     .newI{
         background: url(bg.jpg) no-repeat;
     }
@@ -55,12 +53,11 @@
         $('#draw').bind('touchstart',function(){
             var oImg=new Image();
             oImg.src=$('#myCanvas')[0].toDataURL('image/gif').replace('image/gif','image/octet-stream');
-			$(oImg).addClass('newI');
-			$('#myCanvas').css('display','none');
-			$(oImg).addClass('bor');
+	    $(oImg).addClass('newI');
+	    $('#myCanvas').css('display','none');
 
-            $(oImg).appendTo($('body'));
-			window.location=oImg.src;
+            //$(oImg).appendTo($('body'));
+	    window.location=oImg.src;
         })
     });
 	</script>
