@@ -23,18 +23,35 @@
         border:10px solid red;
     }
     .newI{
-        background: url(bg.jpg) no-repeat;
+        background: url(img/bg.jpg) no-repeat;
     }
 	</style>
     <script src="zepto.js"></script>
+
+</head>
+<body>
+<div id="draw">
+	<canvas id="myCanvas" width="650" height="900" style="border: 1px solid #ccc;"></canvas>
+</div>
 	<script type="text/javascript">
 	$(document).ready(function(){
         var ctx=$('#myCanvas')[0].getContext("2d");
+        var bg=new Image();
+        bg.src='img/bg.jpg';
+        bg.onload=function(){
+        	var bgI=ctx.createPattern(bg,'repeat');
+        	ctx.fillStyle=bgI;
+        	ctx.fillRect(0,0,$('#myCanvas')[0].width,$('#myCanvas')[0].height)
+        };
+
         var img=new Image();
-        img.src='ewm.png';
+        img.src='img/ewm.png';
         img.onload=function(){
             ctx.drawImage(img,180,300,250,250);
         };
+
+
+        
         $('#draw').bind('touchstart',function(){
             var oImg=new Image();
             oImg.src=$('#myCanvas')[0].toDataURL('image/gif').replace('image/gif','image/octet-stream');
@@ -43,14 +60,9 @@
 			$(oImg).addClass('bor');
 
             $(oImg).appendTo($('body'));
+			window.location=oImg.src;
         })
     });
 	</script>
-</head>
-<body>
-<div id="draw">
-	<canvas id="myCanvas" width="650" height="900" style="border: 1px solid #ccc; background-image: url(bg.jpg);background-repeat: no-repeat;"></canvas>
-</div>
-
 </body>
 </html>
