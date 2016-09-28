@@ -23,7 +23,7 @@
         border:10px solid red;
     }
     .newI{
-        background: url(img/bg.jpg) no-repeat;
+        background: url(bg.jpg) no-repeat;
     }
 	</style>
     <script src="zepto.js"></script>
@@ -31,7 +31,7 @@
 	$(document).ready(function(){
         var ctx=$('#myCanvas')[0].getContext("2d");
         var img=new Image();
-        img.src='img/ewm.png';
+        img.src='ewm.png';
         img.onload=function(){
             ctx.drawImage(img,180,300,250,250);
         };
@@ -50,7 +50,7 @@
 </head>
 <body>
 <div id="draw">
-	<canvas id="myCanvas" width="650" height="900" style="border: 1px solid #ccc; background-image: url(img/bg.jpg);background-repeat: no-repeat;"></canvas>
+	<canvas id="myCanvas" width="650" height="900" style="border: 1px solid #ccc; background-image: url(bg.jpg);background-repeat: no-repeat;"></canvas>
 	<a href="javascrpt:;" download="" id="downL"></a>
 </div>
 
