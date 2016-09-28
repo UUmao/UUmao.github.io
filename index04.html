@@ -23,7 +23,7 @@
         border:10px solid red;
     }
     .newI{
-        background: url(img/bg.jpg) no-repeat;
+        background: url(bg.jpg) no-repeat;
     }
 	</style>
     <script src="zepto.js"></script>
@@ -37,7 +37,7 @@
 	$(document).ready(function(){
         var ctx=$('#myCanvas')[0].getContext("2d");
         var bg=new Image();
-        bg.src='img/bg.jpg';
+        bg.src='bg.jpg';
         bg.onload=function(){
         	var bgI=ctx.createPattern(bg,'repeat');
         	ctx.fillStyle=bgI;
